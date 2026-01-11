@@ -5,10 +5,17 @@
 ### Задание 1
 
 `Создание учетной записи пользователя, и вывод списка пользователей:`
+CREATE USER 'sys_temp'@'localhost' IDENTIFIED BY '123';
+SELECT user, host FROM mysql.user
 ![Screenshot_01_01](https://github.com/Astorat/homework-12_02/blob/main/Screenshots/Screenshot_01_01.png)
 
 `Пользователю предоставлены полные права:`
+GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'localhost' WITH GRANT OPTION;
+SELECT * FROM mysql.user WHERE user = 'sys_temp';
 ![Screenshot_01_02](https://github.com/Astorat/homework-12_02/blob/main/Screenshots/Screenshot_01_02.png)
+
+`Подключение под пользователем sys_temp:`
+![Screenshot_01_02](https://github.com/Astorat/homework-12_02/blob/main/Screenshots/Screenshot_01_03.png)
 
 
 ---
